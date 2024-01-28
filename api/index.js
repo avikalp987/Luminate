@@ -2,6 +2,7 @@ import express from "express"
 import mongoose from "mongoose"
 import dotenv from "dotenv"
 import userRouter from "./routes/user.route.js"
+import authRouter from "./routes/auth.route.js"
 
 //configuring the dotenv
 dotenv.config()
@@ -16,9 +17,11 @@ mongoose
     console.log(err)
 })
 
-
 //creating the application
 const app = express()
+
+//allowing the backend to use the json
+app.use(express.json())
 
 //listening to the port
 app.listen(3000, () => {
@@ -26,5 +29,5 @@ app.listen(3000, () => {
 })
 
 
-//test api route
 app.use("/api/user", userRouter)
+app.use("/api/auth", authRouter)
