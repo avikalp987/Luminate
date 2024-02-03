@@ -14,7 +14,7 @@ export default function CallToAction() {
 
             <Button gradientDuoTone={"purpleToPink"} className='rounded-tl-xl rounded-bl-none'>
                 <a href='https://github.com/avikalp987' target='_blank' rel='noopener noreferrer'>
-                    Let's Visit
+                    Let&apos;s Visit
                 </a>
             </Button>
         </div>

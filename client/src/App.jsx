@@ -12,10 +12,13 @@ import OnlyAdmin from "./components/OnlyAdmin"
 import CreatePost from "./pages/CreatePost"
 import UpdatePost from "./pages/UpdatePost"
 import PostPage from "./pages/PostPage"
+import ScrollToTop from "./components/ScrollToTop"
 
 function App() {
   return (
     <BrowserRouter>
+
+      <ScrollToTop />
 
       {/* Add the header that will be visible to all the pages */}
       <Header />
