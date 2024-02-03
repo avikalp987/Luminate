@@ -35,8 +35,6 @@ export default function CommentSection({postId}) {
         getComments()
     }, [postId])
 
-
-
     const handleSubmit = async (e) => {
         e.preventDefault()
 
@@ -76,7 +74,6 @@ export default function CommentSection({postId}) {
     }
     }
 
-
     const handleLike = async (commentId) => {
         try {
             if(!currentUser)
@@ -109,6 +106,14 @@ export default function CommentSection({postId}) {
             console.log(error)
         }
     }
+
+    const handleEdit = async (comment, editedContent) => {
+        setComments(
+          comments.map((c) =>
+            c._id === comment._id ? { ...c, content: editedContent } : c
+          )
+        );
+      };
 
 
   return (
@@ -179,6 +184,7 @@ export default function CommentSection({postId}) {
                     key={comment._id}
                     comment={comment}
                     onLike={handleLike}
+                    onEdit={handleEdit}
                 />
             ))}
             </>
